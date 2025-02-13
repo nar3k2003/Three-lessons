@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'part',
       component: () => import('../views/Part3.vue'),
     },
+    {
+      path: '/solarSystem',
+      name: 'solarSystem',
+      component: () => import('../views/SolarSystem.vue'),
+    },
   ],
 })
 

@@ -389,4 +389,8 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
 }
+
+template{
+  background-color: black;
+}
 </style>
