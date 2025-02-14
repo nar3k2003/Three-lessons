@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hello Cube</h1>
+    <h1>Part 2</h1>
     <img
       src="../../textures/rustediron1-alt2-bl/rustediron2_basecolor.png"
       alt="texture1"
@@ -56,7 +56,7 @@ import {
   MeshStandardMaterial,
   // Group,
   TextureLoader,
-  SRGBColorSpace
+  SRGBColorSpace,
 
   // Fog,
   // Color
@@ -73,15 +73,25 @@ onMounted(() => {
   const textureLoader = new TextureLoader()
 
   // load the grass textures
-  const grassAlbedo = textureLoader.load('/textures/whispy-grass-meadow-bl/wispy-grass-meadow_albedo.png')
+  const grassAlbedo = textureLoader.load(
+    '/textures/whispy-grass-meadow-bl/wispy-grass-meadow_albedo.png',
+  )
   grassAlbedo.colorSpace = SRGBColorSpace
   const grassAo = textureLoader.load('/textures/whispy-grass-meadow-bl/wispy-grass-meadow_ao.png')
-  const grassHeight = textureLoader.load('/textures/whispy-grass-meadow-bl/wispy-grass-meadow_height.png')
-  const grassMetallic = textureLoader.load('/textures/whispy-grass-meadow-bl/wispy-grass-meadow_metallic.png')
-  const grassNormal = textureLoader.load('/textures/whispy-grass-meadow-bl/wispy-grass-meadow_normal-ogl.png')
-  const grassRoughness = textureLoader.load('/textures/whispy-grass-meadow-bl/wispy-grass-meadow_roughness.png')
+  const grassHeight = textureLoader.load(
+    '/textures/whispy-grass-meadow-bl/wispy-grass-meadow_height.png',
+  )
+  const grassMetallic = textureLoader.load(
+    '/textures/whispy-grass-meadow-bl/wispy-grass-meadow_metallic.png',
+  )
+  const grassNormal = textureLoader.load(
+    '/textures/whispy-grass-meadow-bl/wispy-grass-meadow_normal-ogl.png',
+  )
+  const grassRoughness = textureLoader.load(
+    '/textures/whispy-grass-meadow-bl/wispy-grass-meadow_roughness.png',
+  )
 
-  const grassMaterial = new MeshStandardMaterial();
+  const grassMaterial = new MeshStandardMaterial()
   grassMaterial.map = grassAlbedo
   grassMaterial.roughnessMap = grassRoughness
   grassMaterial.metalnessMap = grassMetallic
@@ -91,15 +101,25 @@ onMounted(() => {
   grassMaterial.aoMap = grassAo
 
   // load the boulder textures
-  const boulderAlbedo = textureLoader.load('/textures/badlands-boulders-bl/badlands-boulders_albedo.png')
+  const boulderAlbedo = textureLoader.load(
+    '/textures/badlands-boulders-bl/badlands-boulders_albedo.png',
+  )
   boulderAlbedo.colorSpace = SRGBColorSpace
   const boulderAo = textureLoader.load('/textures/badlands-boulders-bl/badlands-boulders_ao.png')
-  const boulderHeight = textureLoader.load('/textures/badlands-boulders-bl/badlands-boulders_height.png')
-  const boulderMetallic = textureLoader.load('/textures/badlands-boulders-bl/badlands-boulders_metallic.png')
-  const boulderNormal = textureLoader.load('/textures/badlands-boulders-bl/badlands-boulders_normal-ogl.png')
-  const boulderRoughness = textureLoader.load('/textures/badlands-boulders-bl/badlands-boulders_roughness.png')
+  const boulderHeight = textureLoader.load(
+    '/textures/badlands-boulders-bl/badlands-boulders_height.png',
+  )
+  const boulderMetallic = textureLoader.load(
+    '/textures/badlands-boulders-bl/badlands-boulders_metallic.png',
+  )
+  const boulderNormal = textureLoader.load(
+    '/textures/badlands-boulders-bl/badlands-boulders_normal-ogl.png',
+  )
+  const boulderRoughness = textureLoader.load(
+    '/textures/badlands-boulders-bl/badlands-boulders_roughness.png',
+  )
 
-  const boulderMaterial = new MeshStandardMaterial();
+  const boulderMaterial = new MeshStandardMaterial()
   boulderMaterial.map = boulderAlbedo
   boulderMaterial.roughnessMap = boulderRoughness
   boulderMaterial.metalnessMap = boulderMetallic
@@ -107,17 +127,30 @@ onMounted(() => {
   boulderMaterial.displacementMap = boulderHeight
   boulderMaterial.displacementScale = 0.1
   boulderMaterial.aoMap = boulderAo
+  // boulderMaterial.wireframe = true
 
   // load the space cruiser textures
-  const spaceCruiserAlbedo = textureLoader.load('/textures/space-cruiser-panels2-bl/space-cruiser-panels2_albedo.png')
+  const spaceCruiserAlbedo = textureLoader.load(
+    '/textures/space-cruiser-panels2-bl/space-cruiser-panels2_albedo.png',
+  )
   spaceCruiserAlbedo.colorSpace = SRGBColorSpace
-  const spaceCruiserAo = textureLoader.load('/textures/space-cruiser-panels2-bl/space-cruiser-panels2_ao.png')
-  const spaceCruiserHeight = textureLoader.load('/textures/space-cruiser-panels2-bl/space-cruiser-panels2_height.png')
-  const spaceCruiserMetallic = textureLoader.load('/textures/space-cruiser-panels2-bl/space-cruiser-panels2_metallic.png')
-  const spaceCruiserNormal = textureLoader.load('/textures/space-cruiser-panels2-bl/space-cruiser-panels2_normal-ogl.png')
-  const spaceCruiserRoughness = textureLoader.load('/textures/space-cruiser-panels2-bl/space-cruiser-panels2_roughness.png')
+  const spaceCruiserAo = textureLoader.load(
+    '/textures/space-cruiser-panels2-bl/space-cruiser-panels2_ao.png',
+  )
+  const spaceCruiserHeight = textureLoader.load(
+    '/textures/space-cruiser-panels2-bl/space-cruiser-panels2_height.png',
+  )
+  const spaceCruiserMetallic = textureLoader.load(
+    '/textures/space-cruiser-panels2-bl/space-cruiser-panels2_metallic.png',
+  )
+  const spaceCruiserNormal = textureLoader.load(
+    '/textures/space-cruiser-panels2-bl/space-cruiser-panels2_normal-ogl.png',
+  )
+  const spaceCruiserRoughness = textureLoader.load(
+    '/textures/space-cruiser-panels2-bl/space-cruiser-panels2_roughness.png',
+  )
 
-  const spaceCruiserMaterial = new MeshStandardMaterial();
+  const spaceCruiserMaterial = new MeshStandardMaterial()
   spaceCruiserMaterial.map = spaceCruiserAlbedo
   spaceCruiserMaterial.roughnessMap = spaceCruiserRoughness
   spaceCruiserMaterial.metalnessMap = spaceCruiserMetallic
@@ -125,23 +158,35 @@ onMounted(() => {
   spaceCruiserMaterial.displacementMap = spaceCruiserHeight
   spaceCruiserMaterial.displacementScale = 0.1
   spaceCruiserMaterial.aoMap = spaceCruiserAo
+  // spaceCruiserMaterial.wireframe = true
 
-
-  const texture4Albedo = textureLoader.load('/textures/herringbone-flooring-bl/herringbone-flooring_albedo.png')
-  const texture4Ao = textureLoader.load('/textures/herringbone-flooring-bl/herringbone-flooring_ao.png')
-  const texture4Height = textureLoader.load('/textures/herringbone-flooring-bl/herringbone-flooring_height.png')
-  const texture4Metallic = textureLoader.load('/textures/herringbone-flooring-bl/herringbone-flooring_metallic.png')
-  const texture4Normal = textureLoader.load('/textures/herringbone-flooring-bl/herringbone-flooring_normal-ogl.png')
-  const texture4Roughness = textureLoader.load('/textures/herringbone-flooring-bl/herringbone-flooring_roughness.png')
+  const texture4Albedo = textureLoader.load(
+    '/textures/herringbone-flooring-bl/herringbone-flooring_albedo.png',
+  )
+  const texture4Ao = textureLoader.load(
+    '/textures/herringbone-flooring-bl/herringbone-flooring_ao.png',
+  )
+  const texture4Height = textureLoader.load(
+    '/textures/herringbone-flooring-bl/herringbone-flooring_height.png',
+  )
+  const texture4Metallic = textureLoader.load(
+    '/textures/herringbone-flooring-bl/herringbone-flooring_metallic.png',
+  )
+  const texture4Normal = textureLoader.load(
+    '/textures/herringbone-flooring-bl/herringbone-flooring_normal-ogl.png',
+  )
+  const texture4Roughness = textureLoader.load(
+    '/textures/herringbone-flooring-bl/herringbone-flooring_roughness.png',
+  )
   const materialWithTexture4 = new MeshStandardMaterial({
-      map: texture4Albedo,
-      roughnessMap: texture4Roughness,
-      metalnessMap: texture4Metallic,
-      normalMap: texture4Normal,
-      aoMap: texture4Ao,
-      displacementMap: texture4Height,
-      displacementScale: 0.1
-    })
+    map: texture4Albedo,
+    roughnessMap: texture4Roughness,
+    metalnessMap: texture4Metallic,
+    normalMap: texture4Normal,
+    aoMap: texture4Ao,
+    displacementMap: texture4Height,
+    displacementScale: 0.1,
+  })
 
   // console.log(texture1)
   // console.log(texture2)
@@ -390,7 +435,7 @@ onMounted(() => {
   align-items: center;
 }
 
-template{
-  background-color: black;
+h1 {
+  color: white;
 }
 </style>

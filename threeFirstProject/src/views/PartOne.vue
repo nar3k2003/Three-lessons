@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hello Cube</h1>
+    <h1>Part 1</h1>
     <div id="threejs-container" ref="container"></div>
   </div>
 </template>
@@ -142,7 +142,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
 }
-template{
+template {
   background-color: black;
 }
 </style>

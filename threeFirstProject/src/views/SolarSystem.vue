@@ -15,7 +15,7 @@ import {
   PerspectiveCamera,
   WebGLRenderer,
   OrthographicCamera,
-  AxesHelper,
+  // AxesHelper,
   // MeshLambertMaterial,
   Mesh,
   MeshStandardMaterial,
@@ -181,8 +181,8 @@ onMounted(() => {
 
   scene.add(sun)
 
-  const axesHelper = new AxesHelper(10)
-  scene.add(axesHelper)
+  // const axesHelper = new AxesHelper(10)
+  // scene.add(axesHelper)
 
   const aspectRatio = window.innerWidth / window.innerHeight
 
@@ -219,16 +219,16 @@ onMounted(() => {
   // controls.update()
 
   function animate() {
-    planetMeshes.forEach((planet, planetIndex)=>{
-    planet.rotation.y +=  planets[planetIndex].speed
-    planet.position.x = Math.sin(planet.rotation.y) * planets[planetIndex].distance
-    planet.position.z = Math.cos(planet.rotation.y) * planets[planetIndex].distance
-    planet.children.forEach((moon, moonIndex) =>{
-      moon.rotation.y += planets[planetIndex].moons[moonIndex].speed
-      moon.position.x = Math.sin(moon.rotation.y) * planets[planetIndex].moons[moonIndex].distance
-      moon.position.z = Math.cos(moon.rotation.y) * planets[planetIndex].moons[moonIndex].distance
+    planetMeshes.forEach((planet, planetIndex) => {
+      planet.rotation.y += planets[planetIndex].speed
+      planet.position.x = Math.sin(planet.rotation.y) * planets[planetIndex].distance
+      planet.position.z = Math.cos(planet.rotation.y) * planets[planetIndex].distance
+      planet.children.forEach((moon, moonIndex) => {
+        moon.rotation.y += planets[planetIndex].moons[moonIndex].speed
+        moon.position.x = Math.sin(moon.rotation.y) * planets[planetIndex].moons[moonIndex].distance
+        moon.position.z = Math.cos(moon.rotation.y) * planets[planetIndex].moons[moonIndex].distance
+      })
     })
-  })
 
     requestAnimationFrame(animate)
 
@@ -248,7 +248,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
 }
-template{
+template {
   background-color: black;
 }
 </style>
